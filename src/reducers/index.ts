@@ -9,13 +9,13 @@ import modalReducer from './modalReducer';
 import filterReducer from './filterReducers';
 
 const rootReducer = (history: History) => combineReducers({
+  router: connectRouter(history),
   home: homeReduder,
   loading: loadingReducer,
   list: listReducer,
   person: personReducer,
   modal: modalReducer,
-  filter: filterReducer,
-  router: connectRouter(history)
+  filter: filterReducer
 })
 
 export default rootReducer;
