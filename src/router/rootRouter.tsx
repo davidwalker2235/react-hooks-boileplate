@@ -1,8 +1,8 @@
 import React from 'react';
 import { ConnectedRouter } from 'connected-react-router';
 import { Route, Switch } from 'react-router';
-import Cover from '../screens/cover/Cover';
-import PersonList from '../screens/personsList/PersonsList';
+import Cover from '../containers/main/Main';
+import List from '../containers/list/List';
 
 function RootNavigator({history}: any) {
 
@@ -10,7 +10,7 @@ function RootNavigator({history}: any) {
 		<ConnectedRouter history={history}>
 			<Switch>
 				<Route exact path="/" component={Cover} />
-				<Route path="/personList" component={PersonList} />
+				<Route path="/list" component={List} />
 			</Switch>
 		</ConnectedRouter>
 	)

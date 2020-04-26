@@ -27,6 +27,7 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-axios-middleware": "^4.0.1",
+    "redux-i18n": "^1.5.19",
     "redux-saga": "^1.1.3",
     "redux-thunk": "^2.3.0",
     "typeface-roboto": "^0.0.75",
