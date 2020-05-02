@@ -1,43 +1,30 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme, createStyles  } from '@material-ui/core/styles';
 
-const styles = makeStyles({
-  coverContainer: {
-    position: "absolute",
-    left: 0,
-    top: 0,
-    height: '100%',
-    width: '100%',
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  coverImage: {
-    position: 'absolute',
+const styles = makeStyles((theme: Theme) => createStyles({
+  psBackground: {
+    position: 'fixed',
     width: '100%',
     height: '100%',
-    objectFit: 'cover'
+    objectFit: 'cover',
+    backgroundRepeat: 'repeat-y'
   },
-  buttonStyle: {
-    color: 'white !important',
-    height: '50px',
-    width: '200px',
-    backgroundColor: 'purple !important',
-    '&:hover': {
-      backgroundColor: 'blue !important',
-    }
-  },
-  buttonContainer: {
+  root: {
     width: '100%',
-    height: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column'
+    paddingTop: 60
   },
-  logoImage: {
-    zIndex: 1,
-    width: '60vw'
-  }
-});
+  container: {
+    width: '80%',
+    padding: 20
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    flexBasis: '33.33%',
+    flexShrink: 0,
+  },
+  secondaryHeading: {
+    fontSize: theme.typography.pxToRem(15),
+    color: theme.palette.text.secondary,
+  },
+}));
 
 export default styles;

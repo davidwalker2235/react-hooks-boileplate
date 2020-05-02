@@ -26,4 +26,4 @@ const locale = {
   ClearFilters: 'Clear filters'
 }
 
-export default locale as {[key: string]: any};
+export default locale as {[key: string]: string};

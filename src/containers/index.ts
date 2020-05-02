@@ -1,7 +1,11 @@
-import Cover from './main/Main';
-import List from './list/List';
+import { LoginProvider } from './login/LoginProvider';
+import LoginContainer from './login/LoginContainer';
+import { MainProvider } from './main/MainProvider';
+import MainContainer from './main/MainContainer';
 
 export {
-  Cover,
-  List
+  LoginProvider,
+  LoginContainer,
+  MainProvider,
+  MainContainer
 }

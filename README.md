@@ -1,4 +1,4 @@
-List frontend application for the visualization of characters of Brastlewark city
+frontend application for the visualization of characters of Brastlewark city
 
 # Brastlewark Web app
 

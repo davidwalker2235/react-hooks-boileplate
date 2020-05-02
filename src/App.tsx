@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import RootNavigator from './router/rootRouter';
 import configureStore, { history } from './store/store';
 import {Loading, Modal} from './components';
+import AppBarComponent from "./components/appBar/AppBarComponent";
 import './App.css';
 
 const App: FC<{}> = () => {
@@ -12,7 +13,9 @@ const App: FC<{}> = () => {
     <Provider store={store}>
       <Modal />
       <Loading />
-      <RootNavigator history={history}/>
+      <AppBarComponent>
+        <RootNavigator history={history}/>
+      </AppBarComponent>
     </Provider>
   );
 }

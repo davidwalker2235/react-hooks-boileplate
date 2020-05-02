@@ -1,7 +1,13 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { RouterState } from 'connected-react-router'
 import { ListTypeEnum, PersonEnum } from "../shared/enums";
 
+// Subscriber
+export interface SubscriberProps {
+  children?: React.ReactElement<any> | null;
+  subscribe: () => void;
+  unsubscribe: () => void;
+}
 // Commons
 export interface Brastlewark {
   id: number;
@@ -13,7 +19,7 @@ export interface Brastlewark {
   hair_color: string;
   professions: Array<string>;
   friends: Array<string>;
-};
+}
 
 export interface BrastlewarkProp {
   id?: number;
@@ -25,7 +31,7 @@ export interface BrastlewarkProp {
   hair_color?: string;
   professions?: Array<string>;
   friends?: Array<string>;
-};
+}
 
 export interface GlobalData {
   Brastlewark: Brastlewark[]
@@ -54,7 +60,7 @@ export interface State {
 }
 
 // Actions
-export interface Actions {type: string, value?: any};
+export interface Actions {type: string, value?: any}
 
 // Loading screen
 export interface LoadingState {
@@ -85,7 +91,7 @@ export interface ListProps {
   listType?: ListTypeEnum;
   listData?: ListData[];
   onClickRow?: (name?: string, id?: number) => void;
-};
+}
 
 export interface ListRows {
   data: Brastlewark;
