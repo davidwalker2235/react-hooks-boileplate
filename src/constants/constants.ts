@@ -1,3 +1,9 @@
+export const LOGIN = 'LOGIN';
+export const LOGIN_RESPONSE = 'LOGIN_RESPONSE';
+
+
+
+
 export const GET_GLOBAL_DATA = 'GET_GLOBAL_DATA';
 export const SET_GLOBAL_DATA = 'SET_GLOBAL_DATA';
 export const SHOW_LOADING = 'SHOW_LOADING';

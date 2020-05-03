@@ -1,9 +1,9 @@
 import React from "react";
 import {LoginContainer, LoginProvider} from "../../containers";
 
-export const LoginView = () => (
+export const LoginView = (props: any) => (
   <LoginProvider>
-    <LoginContainer />
+    <LoginContainer {...props} />
   </LoginProvider>
 );
 

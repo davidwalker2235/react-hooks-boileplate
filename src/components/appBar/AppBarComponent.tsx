@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react';
+import React, {FC} from 'react';
+import {useSelector} from "react-redux";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -8,12 +9,13 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { useTranslation } from 'react-i18next';
 import styles from './styles';
+import {State} from "../../interfaces/appInterfaces";
 
 const AppBarComponent: FC<any> = ({children}) => {
   const [t] = useTranslation();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const [auth] = useState(true);
+  const isLogged: boolean | undefined = useSelector((state: State) => state.login.isLogged);
   const classes = styles();
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -31,7 +33,7 @@ const AppBarComponent: FC<any> = ({children}) => {
           <Typography variant="h6" className={classes.title}>
             {t('ABBLogs')}
           </Typography>
-          {auth && (
+          {isLogged && (
             <div>
               <IconButton
                 aria-label="account of current user"

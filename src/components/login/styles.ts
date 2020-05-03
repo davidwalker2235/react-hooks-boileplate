@@ -1,18 +1,33 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 
-const styles = makeStyles({
-  loadingContainer: {
-    position: "absolute",
-    left: 0,
-    top: 0,
-    height: '100%',
-    width: '100%',
-    zIndex: 999,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: 'rgba(255,255,255, 0.5)'
-  },
-});
+const styles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+      '& > *': {
+        margin: theme.spacing(1),
+        width: theme.spacing(50),
+        height: theme.spacing(50),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center'
+      },
+    },
+    textInputContainer: {
+      padding: 50
+    },
+    textInput: {
+      width: '100%',
+      marginBottom: 30
+    },
+    margin: {
+      margin: theme.spacing(1),
+    },
+  }),);
 
 export default styles;

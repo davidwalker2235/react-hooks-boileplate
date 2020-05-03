@@ -2,8 +2,8 @@ const resources = {
     en: {
         translation: {
             ABBLogs: 'ABB Logs',
-            TouchToSeePerson: 'Touch to see person',
-            TouchToSeeWorkers: 'Touch to see workers',
+            ThisFieldIsRequired: 'This field is required',
+            Login: 'Login',
             ListOfPersons: 'List of persons',
             EnterToCity: 'Enter to City',
             professions: 'Select profession',

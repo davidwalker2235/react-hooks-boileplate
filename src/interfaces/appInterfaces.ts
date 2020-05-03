@@ -8,6 +8,24 @@ export interface SubscriberProps {
   subscribe: () => void;
   unsubscribe: () => void;
 }
+
+// Login
+export interface LoginState {
+  user: string;
+  password: string;
+  isLogged?: boolean;
+  hasuserLabelError?: boolean,
+  haspasswordLabelError?: boolean,
+  showPassword?: boolean;
+}
+
+export interface LoginProps {
+  history?: any;
+  isLogged?: boolean;
+  children?: React.ReactElement<any> | null;
+  login?: (values: LoginState) => void
+}
+
 // Commons
 export interface Brastlewark {
   id: number;
@@ -50,6 +68,7 @@ export interface ListInfoData {
 
 // State
 export interface State {
+  login: LoginProps;
   loading: LoadingState;
   modal: ModalState;
   home: HomeProps;
