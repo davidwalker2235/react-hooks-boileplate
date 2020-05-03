@@ -1,8 +1,11 @@
 import {connect} from "react-redux";
 import {Subscriber} from "../../shared/Subscriber";
+import {getMainData} from '../../actions/mainActions';
 
-const mapDispatchToProps = () => ({
-  subscribe: () => {},
+const mapDispatchToProps = (dispatch: any) => ({
+  subscribe: () => {
+    dispatch(getMainData())
+  },
   unsubscribe: () => {}
 });
 

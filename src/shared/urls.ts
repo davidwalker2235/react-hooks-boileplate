@@ -1,0 +1,1 @@
+export const GET_DATA_URI = 'https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json';

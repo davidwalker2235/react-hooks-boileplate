@@ -1,9 +1,9 @@
 import React from "react";
 import {MainContainer, MainProvider} from "../../containers";
 
-export const MainView = () => (
+export const MainView = (props: any) => (
   <MainProvider>
-    <MainContainer />
+    <MainContainer {...props} />
   </MainProvider>
 );
 

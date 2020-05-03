@@ -54,6 +54,14 @@ const Login: FC<LoginProps> = ({ history,
     login && dispatch(login(values))
   }
 
+  const isButtonDisabled = () => {
+    if (values?.user && values?.password ) {
+      return values.user.length === 0 || values.password.length === 0
+    }
+
+    return true;
+  }
+
   return     (
     <div className={classes.root}>
       <Paper elevation={3}>
@@ -109,7 +117,7 @@ const Login: FC<LoginProps> = ({ history,
           color="primary"
           className={classes.margin}
           onClick={onClickLogin}
-          disabled={values.user.length === 0 || values.password.length === 0}
+          disabled={isButtonDisabled()}
         >
           {t('Login')}
         </Button>

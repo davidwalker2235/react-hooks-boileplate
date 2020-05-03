@@ -1,4 +1,4 @@
-import {LOGIN_RESPONSE} from '../constants/constants';
+import {LOGIN_RESPONSE, LOGOUT} from '../constants/constants';
 import {Actions, LoginProps} from '../interfaces/appInterfaces';
 
 const initialState: LoginProps = {
@@ -9,6 +9,8 @@ export default function homeReducer(state: LoginProps = initialState, action: Ac
   switch (action.type) {
     case LOGIN_RESPONSE:
       return { ...state, isLogged: true };
+    case LOGOUT:
+      return { ...state, isLogged: false };
     default:
       return state;
   }

@@ -1,12 +1,17 @@
-import React, { FC } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, {FC, useEffect} from 'react';
+import styles from './styles'
+import {MainProps} from "../../interfaces/appInterfaces";
 
-const Main: FC<any> = () => {
-  const [t] = useTranslation();
+const Main: FC<MainProps> = ({history, mainData, isLogged}) => {
+  const classes = styles();
+
+  useEffect(() => {
+    !isLogged && history.push("/");
+  }, [isLogged]);
 
   return (
-    <div>
-      {t('TouchToSeePerson')}
+    <div className={classes.mainContainer}>
+      {mainData.map((data: any) => data?.name)}
     </div>
   )
 }

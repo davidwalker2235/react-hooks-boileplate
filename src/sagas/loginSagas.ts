@@ -1,5 +1,5 @@
 import { put, takeLatest, all } from 'redux-saga/effects';
-import {LOGIN, LOGIN_RESPONSE} from '../constants/constants';
+import { LOGIN, LOGIN_RESPONSE } from '../constants/constants';
 
 function* fetchLogin() {
   try {

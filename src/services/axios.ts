@@ -1,11 +1,13 @@
 import axios from 'axios';
-import { parseFromApiToBrastlewark } from '../shared/models';
+import { parseFromApiToResponse } from '../shared/models';
+import { RequestInfo } from '../interfaces/appInterfaces';
 
-export const getGlobalData = async () => {
+export const getData = async ({type, url}: RequestInfo) => {
   try {
-    const response = await axios.get('https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json');
-    const parsedData = parseFromApiToBrastlewark(response?.data);
-    return parsedData;
+    // @ts-ignore
+    const call = axios[type];
+    const response = await call(url);
+    return parseFromApiToResponse(response?.data);
   } catch (error) {
     alert(error)
   }

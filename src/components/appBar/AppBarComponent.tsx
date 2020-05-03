@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -10,9 +10,11 @@ import Menu from '@material-ui/core/Menu';
 import { useTranslation } from 'react-i18next';
 import styles from './styles';
 import {State} from "../../interfaces/appInterfaces";
+import {logout} from "../../actions/loginActions";
 
 const AppBarComponent: FC<any> = ({children}) => {
   const [t] = useTranslation();
+  const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const isLogged: boolean | undefined = useSelector((state: State) => state.login.isLogged);
@@ -26,6 +28,11 @@ const AppBarComponent: FC<any> = ({children}) => {
     setAnchorEl(null);
   };
 
+  const onClickLogout = () => {
+    setAnchorEl(null);
+    dispatch(logout())
+  }
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -36,8 +43,7 @@ const AppBarComponent: FC<any> = ({children}) => {
           {isLogged && (
             <div>
               <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
+                aria-controls="menu-appbar-icon"
                 aria-haspopup="true"
                 onClick={handleMenu}
                 color="inherit"
@@ -59,7 +65,7 @@ const AppBarComponent: FC<any> = ({children}) => {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                <MenuItem onClick={onClickLogout}>{t('Logout')}</MenuItem>
               </Menu>
             </div>
           )}

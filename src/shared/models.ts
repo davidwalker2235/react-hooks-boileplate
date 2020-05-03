@@ -1,6 +1,6 @@
-import { GlobalData, Brastlewark } from "../interfaces/appInterfaces";
+import { MainData, Response } from "../interfaces/appInterfaces";
 
-export interface BrastlewarkFromApi {
+export interface ResponseFromApi {
     id?: number;
     name?: string;
     thumbnail?: string;
@@ -10,9 +10,9 @@ export interface BrastlewarkFromApi {
     hair_color?: string;
     professions?: Array<string>;
     friends?: Array<string>;
-};
+}
 
-export const parseToBrastlewark = (apiResponse: BrastlewarkFromApi): Brastlewark => {
+export const parseToResponse = (apiResponse: ResponseFromApi): Response => {
     return {
         id: (typeof apiResponse.id === 'number') ? apiResponse.id : apiResponse.id || -1,
         name: apiResponse?.name || '',
@@ -25,8 +25,8 @@ export const parseToBrastlewark = (apiResponse: BrastlewarkFromApi): Brastlewark
         friends: apiResponse?.friends || []
     }}
 
-export const parseFromApiToBrastlewark = (apiResponse: GlobalData): Brastlewark[] => {
-    const response: Brastlewark[] = apiResponse.Brastlewark || [];
+export const parseFromApiToResponse = (apiResponse: MainData): Response[] => {
+    const response: Response[] = apiResponse.Brastlewark || [];
 
-    return response.map(parseToBrastlewark);
+    return response.map(parseToResponse);
 }
